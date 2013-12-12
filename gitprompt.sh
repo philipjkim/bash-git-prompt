@@ -45,6 +45,9 @@ function git_prompt_config()
   local Green="\[\033[38;5;36m\]"
   local Orange="\[\033[38;5;208m\]"
   local LightBlue="\[\033[38;5;31m\]"
+  local LightGreen2="\[\033[38;5;115m\]"
+  local LightCyan2="\[\033[38;5;116m\]"
+  local LightBlue2="\[\033[38;5;117m\]"
 
   # Default values for the appearance of the prompt. Configure at will.
   GIT_PROMPT_PREFIX="["
@@ -64,9 +67,10 @@ function git_prompt_config()
   # local Time12a="(\@))"
   local PathShort="\w"
   local RvmInfo=" ${ResetColor}[${Green}`~/.rvm/bin/rvm-prompt`${ResetColor}]"
+  local NvmInfo=" ${ResetColor}[${LightGreen2}node ${LightBlue2}`nvm_version`${ResetColor}]"
 
   if [ "x${GIT_PROMPT_START}" == "x" ]; then
-    PROMPT_START="${Orange}${PathShort}${RvmInfo}${ResetColor}"
+    PROMPT_START="${Orange}${PathShort}${NvmInfo}${RvmInfo}"
   else
     PROMPT_START="${GIT_PROMPT_START}"
   fi
