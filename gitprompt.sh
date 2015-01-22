@@ -66,17 +66,11 @@ function git_prompt_config()
   # local Time12a="(\$(date +%H:%M:%S))"
   # local Time12a="(\@))"
   local PathShort="\w"
-  local RvmInfo=" ${ResetColor}[${Green}`~/.rvm/bin/rvm-prompt`${ResetColor}]"
-  local NvmInfo=" ${ResetColor}[${LightGreen2}node ${LightBlue2}`nvm_version`${ResetColor}]"
 
-  if [ "x${GIT_PROMPT_START}" == "x" ]; then
-    PROMPT_START="${Orange}${PathShort}${NvmInfo}${RvmInfo}"
-  else
-    PROMPT_START="${GIT_PROMPT_START}"
-  fi
+  PROMPT_START="${Orange}${PathShort}${ResetColor}"
 
   if [ "x${GIT_PROMPT_END}" == "x" ]; then
-    PROMPT_END=" \n${White}${Time12a}${ResetColor} $ "
+    PROMPT_END=" \n${Green}${Time12a}${ResetColor} $ "
   else
     PROMPT_END="${GIT_PROMPT_END}"
   fi
